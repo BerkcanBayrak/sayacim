@@ -112,7 +112,7 @@ class _ExamScheduleScreenState extends State<ExamScheduleScreen> {
           },
         ),
         title: Text(
-          'Exam Schedule',
+          'Sınav Takvimi',
           style: TextStyle(
             color: isDark ? Colors.grey[200] : Colors.grey[800],
             fontWeight: FontWeight.bold,
@@ -162,9 +162,9 @@ class _ExamScheduleScreenState extends State<ExamScheduleScreen> {
                     children: [
                       Icon(Icons.event_busy, size: 64, color: isDark ? Colors.grey[600] : Colors.grey[400]),
                       const SizedBox(height: 16),
-                      Text('No Exams Scheduled', style: TextStyle(fontSize: 18, color: isDark ? Colors.white : Colors.black)),
+                      Text('Sınav Yok', style: TextStyle(fontSize: 18, color: isDark ? Colors.white : Colors.black)),
                       const SizedBox(height: 8),
-                      Text('Tap the + button to add your first exam.', style: TextStyle(color: Colors.grey)),
+                      Text('İlk sınava eklemek için + butonuna tıkla.', style: TextStyle(color: Colors.grey)),
                     ],
                   ),
                 )
@@ -332,7 +332,7 @@ class _ExamScheduleScreenState extends State<ExamScheduleScreen> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text(exam == null ? 'Add Exam' : 'Edit Exam'),
+          title: Text(exam == null ? 'S\u0131nav Ekle' : 'S\u0131nav D\u00fczenle'),
           content: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -348,7 +348,7 @@ class _ExamScheduleScreenState extends State<ExamScheduleScreen> {
                             context: context,
                             builder: (ctx) {
                               return AlertDialog(
-                                title: const Text('Select Course'),
+                                title: const Text('Dersi Se\u00e7'),
                                 content: SingleChildScrollView(
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -368,14 +368,14 @@ class _ExamScheduleScreenState extends State<ExamScheduleScreen> {
                             },
                           );
                         },
-                        child: Text(selectedName ?? 'Select Course'),
+                        child: Text(selectedName ?? 'Ders Se\u00e7'),
                       );
                     },
                   ),
                 const SizedBox(height: 12),
                 TextField(
                   controller: _descController,
-                  decoration: const InputDecoration(labelText: 'Description'),
+                  decoration: const InputDecoration(labelText: 'Tan\u0131m'),
                 ),
                 const SizedBox(height: 8),
                 ValueListenableBuilder<DateTime>(
@@ -384,7 +384,7 @@ class _ExamScheduleScreenState extends State<ExamScheduleScreen> {
                     return Row(
                       children: [
                         Expanded(
-                          child: Text('Date: ${_formatDate(value)}'),
+                          child: Text('Tarih: ${_formatDate(value)}'),
                         ),
                         IconButton(
                           icon: const Icon(Icons.calendar_today),
@@ -416,7 +416,7 @@ class _ExamScheduleScreenState extends State<ExamScheduleScreen> {
                     return Row(
                       children: [
                         Expanded(
-                          child: Text('Time: ${_formatTime(value)}'),
+                          child: Text('Saat: ${_formatTime(value)}'),
                         ),
                         IconButton(
                           icon: const Icon(Icons.access_time),
@@ -442,7 +442,7 @@ class _ExamScheduleScreenState extends State<ExamScheduleScreen> {
                 ),
                 Row(
                   children: [
-                    const Text('Completed'),
+                    const Text('Tamamland\u0131'),
                     const SizedBox(width: 8),
                     ValueListenableBuilder<bool>(
                       valueListenable: _isCompleted,

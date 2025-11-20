@@ -8,6 +8,7 @@ import '../screens/settings_screen.dart';
 import '../screens/exam_schedule_screen.dart';
 import '../screens/weekly_schedule_screen.dart';
 import '../screens/home_screen.dart';
+import '../screens/dining_menu_screen.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({super.key});
@@ -90,6 +91,19 @@ class DrawerWidget extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => const WeeklyScheduleScreen()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.restaurant_menu, color: isDark ? Colors.grey[400] : Colors.grey[800]),
+            title: Text(
+              'Yemek Menüsü',
+              style: TextStyle(color: isDark ? Colors.grey[200] : Colors.grey[800]),
+            ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const DiningMenuScreen()),
               );
             },
           ),

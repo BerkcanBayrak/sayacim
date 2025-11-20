@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:io';
 import '../core/constants/app_colors.dart';
 import '../providers/theme_provider.dart';
@@ -15,9 +16,37 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
+  late SharedPreferences _prefs;
   bool _pushNotifications = true;
   bool _examReminders = true;
   String _targetGPA = '3.8';
+
+  @override
+  void initState() {
+    super.initState();
+    _loadSettings();
+  }
+
+  Future<void> _loadSettings() async {
+    _prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _pushNotifications = _prefs.getBool('pushNotifications') ?? true;
+      _examReminders = _prefs.getBool('examReminders') ?? true;
+      _targetGPA = _prefs.getString('targetGPA') ?? '3.8';
+    });
+  }
+
+  Future<void> _savePushNotifications(bool value) async {
+    await _prefs.setBool('pushNotifications', value);
+  }
+
+  Future<void> _saveExamReminders(bool value) async {
+    await _prefs.setBool('examReminders', value);
+  }
+
+  Future<void> _saveTargetGPA(String value) async {
+    await _prefs.setString('targetGPA', value);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +68,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           },
         ),
         title: Text(
-          'Settings',
+          'Ayarlar',
           style: TextStyle(
             color: isDark ? Colors.grey[200] : Colors.grey[800],
             fontWeight: FontWeight.bold,
@@ -121,7 +150,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
               child: Text(
-                'GENERAL',
+                'GENEL',
                 style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
@@ -141,7 +170,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   // Dark Mode Toggle
                   _buildSettingsTile(
                     icon: Icons.dark_mode,
-                    title: 'Dark Mode',
+                    title: 'Gece Modu',
                     isDark: isDark,
                     trailing: Switch(
                       value: themeProvider.isDarkMode,
@@ -155,17 +184,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   // Target GPA
                   _buildSettingsTile(
                     icon: Icons.track_changes,
-                    title: 'Target GPA',
+                    title: 'Hedef GPA',
                     isDark: isDark,
                     trailing: SizedBox(
                       width: 80,
                       child: TextField(
                         controller: TextEditingController(text: _targetGPA),
-                        onChanged: (value) => _targetGPA = value,
+                        onChanged: (value) {
+                          setState(() => _targetGPA = value);
+                          _saveTargetGPA(value);
+                        },
                         textAlign: TextAlign.right,
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: 'e.g., 3.8',
+                          hintText: 'Örn: 3.8',
                           hintStyle: TextStyle(
                             color: isDark ? Colors.grey[600] : Colors.grey[400],
                           ),
@@ -180,7 +212,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   // Account Settings
                   _buildSettingsTile(
                     icon: Icons.account_circle,
-                    title: 'Account Settings',
+                    title: 'Hesap Ayarları',
                     isDark: isDark,
                     trailing: Icon(
                       Icons.chevron_right,
@@ -202,7 +234,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
               child: Text(
-                'NOTIFICATIONS',
+                'BİLDİRİMLER',
                 style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
@@ -222,12 +254,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   // Push Notifications
                   _buildSettingsTile(
                     icon: Icons.notifications,
-                    title: 'Push Notifications',
+                    title: 'Push Bildirimler',
                     isDark: isDark,
                     trailing: Switch(
                       value: _pushNotifications,
                       onChanged: (value) {
                         setState(() => _pushNotifications = value);
+                        _savePushNotifications(value);
                         if (value) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
@@ -244,12 +277,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   // Exam Reminders
                   _buildSettingsTile(
                     icon: Icons.school,
-                    title: 'Exam Reminders',
+                    title: 'Sınav Hatırlatmaları',
                     isDark: isDark,
                     trailing: Switch(
                       value: _examReminders,
                       onChanged: (value) {
                         setState(() => _examReminders = value);
+                        _saveExamReminders(value);
                       },
                       activeColor: AppColors.primary,
                     ),
@@ -263,7 +297,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
               child: Text(
-                'ABOUT',
+                'HAKKINDA',
                 style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
@@ -283,7 +317,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   // Version
                   _buildSettingsTile(
                     icon: Icons.info,
-                    title: 'Version',
+                    title: 'Sürüm',
                     isDark: isDark,
                     trailing: Text(
                       '1.0.0',
@@ -297,7 +331,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   // Privacy Policy
                   _buildSettingsTile(
                     icon: Icons.privacy_tip,
-                    title: 'Privacy Policy',
+                    title: 'Gizlilik Politikası',
                     isDark: isDark,
                     trailing: Icon(
                       Icons.chevron_right,
@@ -311,7 +345,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   // Terms of Service
                   _buildSettingsTile(
                     icon: Icons.gavel,
-                    title: 'Terms of Service',
+                    title: 'Kullanım Koşulları',
                     isDark: isDark,
                     trailing: Icon(
                       Icons.chevron_right,

@@ -5,13 +5,13 @@ import '../database/database_helper.dart';
 class ClassProvider extends ChangeNotifier {
   final DatabaseHelper _dbHelper = DatabaseHelper();
   final Map<String, List<ClassSession>> _classesByDay = {
-    'Mon': [],
-    'Tue': [],
-    'Wed': [],
-    'Thu': [],
-    'Fri': [],
-    'Sat': [],
-    'Sun': [],
+    'Pazartesi': [],
+    'Salı': [],
+    'Çarşamba': [],
+    'Perşembe': [],
+    'Cuma': [],
+    'Cumartesi': [],
+    'Pazar': [],
   };
 
   Map<String, List<ClassSession>> get classesByDay => _classesByDay;

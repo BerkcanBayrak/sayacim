@@ -14,7 +14,7 @@ class WeeklyScheduleScreen extends StatefulWidget {
 }
 
 class _WeeklyScheduleScreenState extends State<WeeklyScheduleScreen> {
-  final List<String> daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+  final List<String> daysOfWeek = ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma'];
   late String _selectedDay;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -46,7 +46,7 @@ class _WeeklyScheduleScreenState extends State<WeeklyScheduleScreen> {
           },
         ),
         title: Text(
-          'Schedule',
+          'Haftalık Program',
           style: TextStyle(
             color: isDark ? Colors.grey[200] : Colors.grey[800],
             fontWeight: FontWeight.bold,
@@ -319,7 +319,7 @@ class _WeeklyScheduleScreenState extends State<WeeklyScheduleScreen> {
                       border: Border.all(color: Colors.grey[600]!),
                     ),
                     child: Text(
-                      'No courses available. Add a course first.',
+                      'Lütfen önce kurs ekleyin.',
                       style: TextStyle(color: Colors.grey[400]),
                     ),
                   ),
@@ -335,7 +335,7 @@ class _WeeklyScheduleScreenState extends State<WeeklyScheduleScreen> {
                     return SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
-                        children: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((day) {
+                        children: ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar'].map((day) {
                           final isSelected = selectedDay == day;
                           return GestureDetector(
                             onTap: () => _selectedDayNotifier.value = day,

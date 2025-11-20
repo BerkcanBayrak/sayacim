@@ -2,7 +2,7 @@ class ClassSession {
   final int? id;
   final int? courseId; // Nullable - class can exist without a linked course
   final String courseName;
-  final String dayOfWeek; // Mon, Tue, Wed, Thu, Fri, Sat, Sun
+  final String dayOfWeek; // Pazartesi, Salı, Çarşamba, Perşembe, Cuma, Cumartesi, Pazar
   final String startTime; // HH:mm format
   final String endTime; // HH:mm format
   final String location; // Classroom / Location
