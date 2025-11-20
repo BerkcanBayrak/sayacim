@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dining Menu Empty State</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#7f55f1",
+              "background-light": "#f6f6f8",
+              "background-dark": "#121212",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-screen w-full flex-col group/design-root overflow-hidden" style="aspect-ratio: 9 / 16; max-width: 414px; margin: auto;">
+<!-- Top App Bar -->
+<header class="flex items-center p-4 pb-2 justify-between shrink-0">
+<div class="flex size-12 items-center justify-start text-white/90">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</div>
+<h1 class="flex-1 text-center text-lg font-bold leading-tight tracking-[-0.015em] text-white/90">Dining Menu</h1>
+<div class="size-12"></div>
+</header>
+<!-- Main Content -->
+<main class="flex flex-1 flex-col justify-center px-4 py-6">
+<div class="flex flex-col items-center gap-6 text-center">
+<div class="flex items-center justify-center w-full max-w-[280px]">
+<svg class="w-full h-auto" data-alt="Minimalist illustration of a menu document" fill="none" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<path d="M58.3333 41.6667H141.667V58.3334H58.3333V41.6667Z" fill="#2D2D2D"></path>
+<rect fill="#212121" height="150" rx="12" width="133.333" x="33.3333" y="25"></rect>
+<path d="M50 83.3333H150V91.6666H50V83.3333Z" fill="#3D3D3D"></path>
+<path d="M50 108.333H125V116.667H50V108.333Z" fill="#3D3D3D"></path>
+<path d="M50 133.333H150V141.667H50V133.333Z" fill="#3D3D3D"></path>
+</svg>
+</div>
+<div class="flex flex-col gap-2">
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em] text-white/90">No Menu Available</h2>
+<p class="text-base font-normal leading-normal text-white/60 max-w-xs">Upload your monthly menu PDF to see daily meals</p>
+</div>
+</div>
+</main>
+<!-- Bottom CTA Button -->
+<footer class="p-4 pt-2">
+<button class="flex min-w-[84px] w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-primary text-white gap-2 text-base font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined text-2xl">upload_file</span>
+<span class="truncate">Upload Menu PDF</span>
+</button>
+</footer>
+</div>
+</body></html>

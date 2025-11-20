@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dining Hall Menu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#7f55f1",
+              "background-light": "#f6f6f8",
+              "background-dark": "#121212",
+              "card-dark": "#1E1E1E",
+              "text-primary-dark": "#E0E0E0",
+              "text-secondary-dark": "#888888",
+            },
+            fontFamily: {
+              "display": ["Work Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative mx-auto flex h-auto min-h-screen w-full max-w-md flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="flex size-10 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined text-text-primary-dark text-2xl">arrow_back</span>
+</div>
+<h1 class="text-lg font-bold leading-tight tracking-[-0.015em] text-text-primary-dark flex-1 text-center">Dining Menu</h1>
+<div class="flex size-10 shrink-0 items-center justify-center"></div>
+</div>
+<!-- Horizontal Calendar Strip -->
+<div class="flex gap-3 px-4 py-3 overflow-x-auto whitespace-nowrap scrollbar-hide">
+<div class="flex h-14 shrink-0 flex-col items-center justify-center gap-y-1 rounded-xl bg-card-dark w-14">
+<p class="text-sm font-medium leading-normal text-text-secondary-dark">Mon</p>
+<p class="text-base font-semibold leading-normal text-text-primary-dark">15</p>
+</div>
+<div class="flex h-14 shrink-0 flex-col items-center justify-center gap-y-1 rounded-xl bg-card-dark w-14">
+<p class="text-sm font-medium leading-normal text-text-secondary-dark">Tue</p>
+<p class="text-base font-semibold leading-normal text-text-primary-dark">16</p>
+</div>
+<div class="flex h-14 shrink-0 flex-col items-center justify-center gap-y-1 rounded-full bg-primary w-14">
+<p class="text-sm font-medium leading-normal text-white">Wed</p>
+<p class="text-base font-semibold leading-normal text-white">17</p>
+</div>
+<div class="flex h-14 shrink-0 flex-col items-center justify-center gap-y-1 rounded-xl bg-card-dark w-14">
+<p class="text-sm font-medium leading-normal text-text-secondary-dark">Thu</p>
+<p class="text-base font-semibold leading-normal text-text-primary-dark">18</p>
+</div>
+<div class="flex h-14 shrink-0 flex-col items-center justify-center gap-y-1 rounded-xl bg-card-dark w-14">
+<p class="text-sm font-medium leading-normal text-text-secondary-dark">Fri</p>
+<p class="text-base font-semibold leading-normal text-text-primary-dark">19</p>
+</div>
+<div class="flex h-14 shrink-0 flex-col items-center justify-center gap-y-1 rounded-xl bg-card-dark w-14">
+<p class="text-sm font-medium leading-normal text-text-secondary-dark">Sat</p>
+<p class="text-base font-semibold leading-normal text-text-primary-dark">20</p>
+</div>
+<div class="flex h-14 shrink-0 flex-col items-center justify-center gap-y-1 rounded-xl bg-card-dark w-14">
+<p class="text-sm font-medium leading-normal text-text-secondary-dark">Sun</p>
+<p class="text-base font-semibold leading-normal text-text-primary-dark">21</p>
+</div>
+</div>
+<div class="flex-1 px-4 pb-28 space-y-6">
+<!-- Breakfast Section -->
+<div>
+<h2 class="text-text-primary-dark text-xl font-bold leading-tight tracking-[-0.015em] pt-4 pb-3">Breakfast</h2>
+<div class="space-y-2">
+<div class="flex items-center gap-4 bg-card-dark p-3 rounded-lg min-h-14 justify-between">
+<div class="flex items-center gap-4 flex-1">
+<div class="text-text-primary-dark flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-12">
+<span class="material-symbols-outlined">bakery_dining</span>
+</div>
+<p class="text-text-primary-dark text-base font-medium leading-normal flex-1">Scrambled Eggs &amp; Toast</p>
+</div>
+<div class="shrink-0">
+<div class="flex h-7 items-center justify-center rounded-full bg-background-dark px-3"><p class="text-xs text-text-secondary-dark font-medium">350 kcal</p></div>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-card-dark p-3 rounded-lg min-h-14 justify-between">
+<div class="flex items-center gap-4 flex-1">
+<div class="text-text-primary-dark flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-12">
+<span class="material-symbols-outlined">breakfast_dining</span>
+</div>
+<p class="text-text-primary-dark text-base font-medium leading-normal flex-1">Oatmeal with Berries</p>
+</div>
+<div class="shrink-0">
+<div class="flex h-7 items-center justify-center rounded-full bg-background-dark px-3"><p class="text-xs text-text-secondary-dark font-medium">280 kcal</p></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Lunch Section -->
+<div>
+<h2 class="text-text-primary-dark text-xl font-bold leading-tight tracking-[-0.015em] pt-4 pb-3">Lunch</h2>
+<div class="space-y-2">
+<div class="flex items-center gap-4 bg-card-dark p-3 rounded-lg min-h-14 justify-between">
+<div class="flex items-center gap-4 flex-1">
+<div class="text-text-primary-dark flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-12">
+<span class="material-symbols-outlined">soup_kitchen</span>
+</div>
+<p class="text-text-primary-dark text-base font-medium leading-normal flex-1">Tomato Basil Soup</p>
+</div>
+<div class="shrink-0">
+<div class="flex h-7 items-center justify-center rounded-full bg-background-dark px-3"><p class="text-xs text-text-secondary-dark font-medium">250 kcal</p></div>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-card-dark p-3 rounded-lg min-h-14 justify-between">
+<div class="flex items-center gap-4 flex-1">
+<div class="text-text-primary-dark flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-12">
+<span class="material-symbols-outlined">dinner_dining</span>
+</div>
+<p class="text-text-primary-dark text-base font-medium leading-normal flex-1">Grilled Chicken Salad</p>
+</div>
+<div class="shrink-0">
+<div class="flex h-7 items-center justify-center rounded-full bg-background-dark px-3"><p class="text-xs text-text-secondary-dark font-medium">420 kcal</p></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Dinner Section -->
+<div>
+<h2 class="text-text-primary-dark text-xl font-bold leading-tight tracking-[-0.015em] pt-4 pb-3">Dinner</h2>
+<div class="space-y-2">
+<div class="flex items-center gap-4 bg-card-dark p-3 rounded-lg min-h-14 justify-between">
+<div class="flex items-center gap-4 flex-1">
+<div class="text-text-primary-dark flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-12">
+<span class="material-symbols-outlined">set_meal</span>
+</div>
+<p class="text-text-primary-dark text-base font-medium leading-normal flex-1">Baked Salmon with Asparagus</p>
+</div>
+<div class="shrink-0">
+<div class="flex h-7 items-center justify-center rounded-full bg-background-dark px-3"><p class="text-xs text-text-secondary-dark font-medium">550 kcal</p></div>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-card-dark p-3 rounded-lg min-h-14 justify-between">
+<div class="flex items-center gap-4 flex-1">
+<div class="text-text-primary-dark flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-12">
+<span class="material-symbols-outlined">cake</span>
+</div>
+<p class="text-text-primary-dark text-base font-medium leading-normal flex-1">Chocolate Lava Cake</p>
+</div>
+<div class="shrink-0">
+<div class="flex h-7 items-center justify-center rounded-full bg-background-dark px-3"><p class="text-xs text-text-secondary-dark font-medium">380 kcal</p></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Daily Total Calories Card -->
+<div class="fixed bottom-0 left-0 right-0 w-full max-w-md mx-auto p-4 bg-gradient-to-t from-background-dark to-transparent">
+<div class="flex items-center justify-between bg-card-dark p-4 rounded-xl shadow-lg">
+<p class="text-base font-semibold text-text-primary-dark">Daily Total Calories</p>
+<p class="text-xl font-bold text-primary">2,230 kcal</p>
+</div>
+</div>
+</div>
+</body></html>
