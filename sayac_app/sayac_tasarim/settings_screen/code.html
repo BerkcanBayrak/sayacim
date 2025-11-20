@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4ce680",
+              "background-light": "#f6f8f6",
+              "background-dark": "#112117",
+              "text-light-primary": "#112117",
+              "text-light-secondary": "#6b7280",
+              "text-dark-primary": "#f6f8f6",
+              "text-dark-secondary": "#9ca3af",
+              "surface-light": "#ffffff",
+              "surface-dark": "#1a2c22",
+              "border-light": "#e5e7eb",
+              "border-dark": "#374151"
+            },
+            fontFamily: {
+              "display": ["Lexend", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden text-text-light-primary dark:text-text-dark-primary">
+<div class="flex-1 pb-20">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4 pb-2 justify-between">
+<div class="flex size-12 shrink-0 items-center justify-start text-text-light-primary dark:text-text-dark-primary">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</div>
+<h1 class="text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Settings</h1>
+<div class="size-12 shrink-0"></div>
+</header>
+<!-- Profile Header -->
+<div class="flex p-4 @container border-b border-border-light dark:border-border-dark">
+<div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
+<div class="flex gap-4 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-20 w-20" data-alt="User's profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDFS6PdopT7JA8EImhY-tcNbMtpIAOf1EuvvlgEnHrOyrF7r-xTPeEr52stF-c2nCN9CNkCGjY1CemiuuglMZVf4AP8F8CdIMDg8jO17VFwcuIFmsG9J7EWR3wNb7z4qu0CBXFGXAOOdD91ao-mL81sA8sABvqGv-bNXcKgkcjRIj2V5gDHPxUDFOpDqqVxHOpfYQsJmRVLPbrvm_RhpbKLlQuia4XgV7N1pRGhSRUIvu_8b1_6NoY4ItfQfYfWZ_8cd4iLlQkjh-g");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-xl font-bold leading-tight tracking-[-0.015em]">Alex Johnson</p>
+<p class="text-primary text-base font-normal leading-normal">alex.j@university.edu</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col">
+<!-- General Section -->
+<h2 class="text-text-light-secondary dark:text-text-dark-secondary text-sm font-bold uppercase tracking-wider px-4 pb-2 pt-6">General</h2>
+<div class="flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl mx-4">
+<!-- Dark Mode -->
+<div class="flex items-center gap-4 px-4 min-h-[56px] justify-between border-b border-border-light dark:border-border-dark">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center shrink-0 size-10">
+<span class="material-symbols-outlined text-2xl text-text-light-secondary dark:text-text-dark-secondary">dark_mode</span>
+</div>
+<p class="text-base font-normal leading-normal flex-1 truncate">Dark Mode</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[28px] w-[50px] cursor-pointer items-center rounded-full bg-gray-200 dark:bg-gray-700 p-1 has-[:checked]:justify-end has-[:checked]:bg-primary">
+<div class="h-5 w-5 rounded-full bg-white transition-transform"></div>
+<input class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Default Grade Scale -->
+<div class="flex items-center gap-4 px-4 min-h-[56px] justify-between border-b border-border-light dark:border-border-dark">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center shrink-0 size-10">
+<span class="material-symbols-outlined text-2xl text-text-light-secondary dark:text-text-dark-secondary">grading</span>
+</div>
+<p class="text-base font-normal leading-normal flex-1 truncate">Default Grade Scale</p>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="text-text-light-secondary dark:text-text-dark-secondary text-sm">4.0 Scale</span>
+<span class="material-symbols-outlined text-2xl text-text-light-secondary dark:text-text-dark-secondary">chevron_right</span>
+</div>
+</div>
+<!-- Target GPA -->
+<div class="flex items-center gap-4 px-4 min-h-[56px] justify-between border-b border-border-light dark:border-border-dark">
+<div class="flex items-center gap-4 w-full">
+<div class="flex items-center justify-center shrink-0 size-10">
+<span class="material-symbols-outlined text-2xl text-text-light-secondary dark:text-text-dark-secondary">track_changes</span>
+</div>
+<label class="text-base font-normal leading-normal flex-1 truncate" for="target-gpa">Target GPA</label>
+<input class="w-24 bg-transparent text-right border-none focus:ring-0 text-text-light-primary dark:text-text-dark-primary placeholder:text-text-light-secondary dark:placeholder:text-text-dark-secondary" id="target-gpa" placeholder="e.g., 3.8" type="text"/>
+</div>
+</div>
+<!-- Account Settings -->
+<div class="flex items-center gap-4 px-4 min-h-[56px] justify-between">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center shrink-0 size-10">
+<span class="material-symbols-outlined text-2xl text-text-light-secondary dark:text-text-dark-secondary">account_circle</span>
+</div>
+<p class="text-base font-normal leading-normal flex-1 truncate">Account Settings</p>
+</div>
+<div class="shrink-0">
+<span class="material-symbols-outlined text-2xl text-text-light-secondary dark:text-text-dark-secondary">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Notifications Section -->
+<h2 class="text-text-light-secondary dark:text-text-dark-secondary text-sm font-bold uppercase tracking-wider px-4 pb-2 pt-6">Notifications</h2>
+<div class="flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl mx-4">
+<!-- Push Notifications -->
+<div class="flex items-center gap-4 px-4 min-h-[56px] justify-between border-b border-border-light dark:border-border-dark">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center shrink-0 size-10">
+<span class="material-symbols-outlined text-2xl text-text-light-secondary dark:text-text-dark-secondary">notifications</span>
+</div>
+<p class="text-base font-normal leading-normal flex-1 truncate">Push Notifications</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[28px] w-[50px] cursor-pointer items-center rounded-full bg-gray-200 dark:bg-gray-700 p-1 has-[:checked]:justify-end has-[:checked]:bg-primary">
+<div class="h-5 w-5 rounded-full bg-white transition-transform"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Exam Reminders -->
+<div class="flex items-center gap-4 px-4 min-h-[56px] justify-between border-b border-border-light dark:border-border-dark">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center shrink-0 size-10">
+<span class="material-symbols-outlined text-2xl text-text-light-secondary dark:text-text-dark-secondary">school</span>
+</div>
+<p class="text-base font-normal leading-normal flex-1 truncate">Exam Reminders</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[28px] w-[50px] cursor-pointer items-center rounded-full bg-gray-200 dark:bg-gray-700 p-1 has-[:checked]:justify-end has-[:checked]:bg-primary">
+<div class="h-5 w-5 rounded-full bg-white transition-transform"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Assignment Due Dates -->
+<div class="flex items-center gap-4 px-4 min-h-[56px] justify-between">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center shrink-0 size-10">
+<span class="material-symbols-outlined text-2xl text-text-light-secondary dark:text-text-dark-secondary">assignment</span>
+</div>
+<p class="text-base font-normal leading-normal flex-1 truncate">Assignment Due Dates</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[28px] w-[50px] cursor-pointer items-center rounded-full bg-gray-200 dark:bg-gray-700 p-1 has-[:checked]:justify-end has-[:checked]:bg-primary">
+<div class="h-5 w-5 rounded-full bg-white transition-transform"></div>
+<input class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+<!-- About Section -->
+<h2 class="text-text-light-secondary dark:text-text-dark-secondary text-sm font-bold uppercase tracking-wider px-4 pb-2 pt-6">About</h2>
+<div class="flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl mx-4">
+<!-- Version -->
+<div class="flex items-center gap-4 px-4 min-h-[56px] justify-between border-b border-border-light dark:border-border-dark">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center shrink-0 size-10">
+<span class="material-symbols-outlined text-2xl text-text-light-secondary dark:text-text-dark-secondary">info</span>
+</div>
+<p class="text-base font-normal leading-normal flex-1 truncate">Version</p>
+</div>
+<div class="shrink-0">
+<p class="text-text-light-secondary dark:text-text-dark-secondary">1.2.5</p>
+</div>
+</div>
+<!-- Privacy Policy -->
+<div class="flex items-center gap-4 px-4 min-h-[56px] justify-between border-b border-border-light dark:border-border-dark">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center shrink-0 size-10">
+<span class="material-symbols-outlined text-2xl text-text-light-secondary dark:text-text-dark-secondary">privacy_tip</span>
+</div>
+<p class="text-base font-normal leading-normal flex-1 truncate">Privacy Policy</p>
+</div>
+<div class="shrink-0">
+<span class="material-symbols-outlined text-2xl text-text-light-secondary dark:text-text-dark-secondary">chevron_right</span>
+</div>
+</div>
+<!-- Terms of Service -->
+<div class="flex items-center gap-4 px-4 min-h-[56px] justify-between border-b border-border-light dark:border-border-dark">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center shrink-0 size-10">
+<span class="material-symbols-outlined text-2xl text-text-light-secondary dark:text-text-dark-secondary">gavel</span>
+</div>
+<p class="text-base font-normal leading-normal flex-1 truncate">Terms of Service</p>
+</div>
+<div class="shrink-0">
+<span class="material-symbols-outlined text-2xl text-text-light-secondary dark:text-text-dark-secondary">chevron_right</span>
+</div>
+</div>
+<!-- Help & Support -->
+<div class="flex items-center gap-4 px-4 min-h-[56px] justify-between">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center shrink-0 size-10">
+<span class="material-symbols-outlined text-2xl text-text-light-secondary dark:text-text-dark-secondary">help</span>
+</div>
+<p class="text-base font-normal leading-normal flex-1 truncate">Help &amp; Support</p>
+</div>
+<div class="shrink-0">
+<span class="material-symbols-outlined text-2xl text-text-light-secondary dark:text-text-dark-secondary">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Log Out Button -->
+<div class="px-4 pt-8">
+<button class="flex w-full items-center justify-center gap-2 rounded-lg bg-red-500/10 dark:bg-red-500/20 text-red-600 dark:text-red-400 font-bold h-12">
+<span class="material-symbols-outlined">logout</span>
+<span>Log Out</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student Grade Tracker Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2b7cee",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+            },
+            fontFamily: {
+              "display": ["Lexend", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative mx-auto flex h-auto min-h-screen w-full max-w-md flex-col overflow-x-hidden bg-background-light dark:bg-background-dark group/design-root">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="flex items-center gap-3">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-transparent text-gray-800 dark:text-gray-200">
+<img alt="User profile avatar" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2BdBYHxqQzFK10HUtRc3CxowpadKnhHFbEeUKzV5ClQ1ulWqjRcrJaYRAcPHjid5ZqbwWbDNv_KFHg5gqFeSMELU0m4x94H3TvuBEfjizs8SC03lL6Mtzw8Azp8JAcDp1l8-uVt1600gnedToAlnyZdYdp8kRkbm7fWttJ5RyMKc-_mnPw7oPX63aLKJtG1PqC2OByV5wYnbNmqcK_I3iZ7QpUwJDH9Vgxlly_l803YcYU8xWbeXtR27sINlw0RPXSJ081XkkkH4"/>
+</button>
+<h2 class="text-gray-900 dark:text-gray-100 text-lg font-bold leading-tight tracking-[-0.015em]">Hi, Alex!</h2>
+</div>
+<div class="flex items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-gray-200/50 dark:bg-gray-700/50 text-gray-900 dark:text-gray-100 text-base font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+</button>
+</div>
+</div>
+<!-- GPA Card -->
+<div class="px-4 pt-6 pb-3">
+<div class="w-full rounded-xl bg-white dark:bg-gray-800/50 p-6 shadow-sm">
+<p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">Overall GPA</p>
+<h1 class="text-gray-900 dark:text-gray-50 tracking-tight text-5xl font-bold leading-tight pt-1">3.85</h1>
+</div>
+</div>
+<!-- Section Header -->
+<h2 class="text-gray-900 dark:text-gray-100 text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">My Courses</h2>
+<!-- Courses List -->
+<div class="flex flex-col gap-3 px-4 pb-24">
+<!-- List Item 1 -->
+<div class="flex flex-col gap-4 rounded-xl bg-white dark:bg-gray-800/50 p-4 shadow-sm cursor-pointer">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="text-white flex items-center justify-center rounded-lg bg-blue-500 shrink-0 size-12">
+<span class="material-symbols-outlined">code</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900 dark:text-gray-100 text-base font-medium leading-normal line-clamp-1">CS101 - Intro to Programming</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-2">Current Grade: A-</p>
+</div>
+</div>
+<div class="shrink-0">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500 text-2xl">chevron_right</span>
+</div>
+</div>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+<div class="bg-blue-500 h-2 rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="flex flex-col gap-4 rounded-xl bg-white dark:bg-gray-800/50 p-4 shadow-sm cursor-pointer">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="text-white flex items-center justify-center rounded-lg bg-teal-500 shrink-0 size-12">
+<span class="material-symbols-outlined">calculate</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900 dark:text-gray-100 text-base font-medium leading-normal line-clamp-1">MATH203 - Linear Algebra</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-2">Current Grade: B+</p>
+</div>
+</div>
+<div class="shrink-0">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500 text-2xl">chevron_right</span>
+</div>
+</div>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+<div class="bg-teal-500 h-2 rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="flex flex-col gap-4 rounded-xl bg-white dark:bg-gray-800/50 p-4 shadow-sm cursor-pointer">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="text-white flex items-center justify-center rounded-lg bg-orange-500 shrink-0 size-12">
+<span class="material-symbols-outlined">draw</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900 dark:text-gray-100 text-base font-medium leading-normal line-clamp-1">ART110 - Design Principles</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-2">Current Grade: A</p>
+</div>
+</div>
+<div class="shrink-0">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500 text-2xl">chevron_right</span>
+</div>
+</div>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+<div class="bg-orange-500 h-2 rounded-full" style="width: 95%"></div>
+</div>
+</div>
+<!-- List Item 4 -->
+<div class="flex flex-col gap-4 rounded-xl bg-white dark:bg-gray-800/50 p-4 shadow-sm cursor-pointer">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="text-white flex items-center justify-center rounded-lg bg-purple-500 shrink-0 size-12">
+<span class="material-symbols-outlined">history_edu</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900 dark:text-gray-100 text-base font-medium leading-normal line-clamp-1">ENG220 - World Literature</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-2">Current Grade: B</p>
+</div>
+</div>
+<div class="shrink-0">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500 text-2xl">chevron_right</span>
+</div>
+</div>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+<div class="bg-purple-500 h-2 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+<!-- Floating Action Button -->
+<button class="fixed bottom-6 right-6 flex h-16 w-16 cursor-pointer items-center justify-center rounded-full bg-primary text-white shadow-lg">
+<span class="material-symbols-outlined text-4xl">add</span>
+</button>
+</div>
+</body></html>

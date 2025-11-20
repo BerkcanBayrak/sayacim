@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Weekly Schedule</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#7F57F1",
+              "background-light": "#f6f6f8",
+              "background-dark": "#121212",
+              "secondary-text": "#888888",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative mx-auto flex h-screen max-w-sm flex-col overflow-hidden">
+<!-- Top App Bar -->
+<header class="flex shrink-0 items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between z-10">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<button class="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-transparent text-white/80">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+<h1 class="text-xl font-bold leading-tight tracking-tight text-white/90">Schedule</h1>
+<div class="flex w-12 items-center justify-end">
+<button class="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-transparent text-white/80">
+<span class="material-symbols-outlined text-3xl">notifications</span>
+</button>
+</div>
+</header>
+<!-- Day Selector Tabs -->
+<nav class="shrink-0 border-b border-white/10 px-4">
+<div class="flex justify-between">
+<a class="flex flex-1 flex-col items-center justify-center border-b-[3px] border-b-transparent py-4 text-secondary-text" href="#">
+<p class="text-sm font-bold">Mon</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center border-b-[3px] border-b-transparent py-4 text-secondary-text" href="#">
+<p class="text-sm font-bold">Tue</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center border-b-[3px] border-b-primary py-4 text-white" href="#">
+<p class="text-sm font-bold">Wed</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center border-b-[3px] border-b-transparent py-4 text-secondary-text" href="#">
+<p class="text-sm font-bold">Thu</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center border-b-[3px] border-b-transparent py-4 text-secondary-text" href="#">
+<p class="text-sm font-bold">Fri</p>
+</a>
+</div>
+</nav>
+<!-- Timeline / Schedule Grid -->
+<main class="flex-grow overflow-y-auto">
+<div class="relative grid grid-cols-[60px_1fr] px-4 pt-6">
+<!-- Time Slots -->
+<div class="col-start-1 col-end-2 row-start-1 row-end-[-1] border-r border-white/10">
+<div class="flex h-16 flex-col items-end pr-4 text-right">
+<p class="text-sm font-medium text-secondary-text">08:00 AM</p>
+</div>
+<div class="flex h-16 flex-col items-end pr-4 text-right">
+<p class="text-sm font-medium text-secondary-text">09:00 AM</p>
+</div>
+<div class="flex h-16 flex-col items-end pr-4 text-right">
+<p class="text-sm font-medium text-secondary-text">10:00 AM</p>
+</div>
+<div class="flex h-16 flex-col items-end pr-4 text-right">
+<p class="text-sm font-medium text-secondary-text">11:00 AM</p>
+</div>
+<div class="flex h-16 flex-col items-end pr-4 text-right">
+<p class="text-sm font-medium text-secondary-text">12:00 PM</p>
+</div>
+<div class="flex h-16 flex-col items-end pr-4 text-right">
+<p class="text-sm font-medium text-secondary-text">01:00 PM</p>
+</div>
+<div class="flex h-16 flex-col items-end pr-4 text-right">
+<p class="text-sm font-medium text-secondary-text">02:00 PM</p>
+</div>
+<div class="flex h-16 flex-col items-end pr-4 text-right">
+<p class="text-sm font-medium text-secondary-text">03:00 PM</p>
+</div>
+<div class="flex h-16 flex-col items-end pr-4 text-right">
+<p class="text-sm font-medium text-secondary-text">04:00 PM</p>
+</div>
+<div class="flex h-16 flex-col items-end pr-4 text-right">
+<p class="text-sm font-medium text-secondary-text">05:00 PM</p>
+</div>
+<div class="flex h-16 flex-col items-end pr-4 text-right">
+<p class="text-sm font-medium text-secondary-text">06:00 PM</p>
+</div>
+</div>
+<!-- Course Blocks -->
+<div class="relative col-start-2 col-end-3 row-start-1 row-end-[-1] pl-4">
+<!-- Current Time Indicator -->
+<div class="absolute -left-1.5 top-[120px] z-10 flex w-full items-center">
+<div class="h-3 w-3 rounded-full bg-primary"></div>
+<div class="h-0.5 flex-grow bg-primary"></div>
+</div>
+<!-- Course Block 1 -->
+<div class="absolute w-[calc(100%-1rem)] top-8 h-24 rounded-lg bg-[#3B82F6]/20 p-3" style="top: 2rem; height: 6rem;">
+<p class="font-bold text-[#60A5FA]">Advanced Algorithms</p>
+<p class="text-sm text-[#93C5FD]">Room 301</p>
+</div>
+<!-- Course Block 2 -->
+<div class="absolute w-[calc(100%-1rem)] top-48 h-32 rounded-lg bg-[#F472B6]/20 p-3" style="top: 12rem; height: 8rem;">
+<p class="font-bold text-[#F9A8D4]">Mobile App Design</p>
+<p class="text-sm text-[#FBCFE8]">Room 112</p>
+</div>
+<!-- Course Block 3 -->
+<div class="absolute w-[calc(100%-1rem)] top-[352px] h-24 rounded-lg bg-[#10B981]/20 p-3" style="top: 22rem; height: 6rem;">
+<p class="font-bold text-[#34D399]">Data Structures</p>
+<p class="text-sm text-[#6EE7B7]">Lab 5B</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<div class="absolute bottom-6 right-4">
+<button class="flex h-14 w-14 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-primary text-white shadow-lg">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+</div>
+</body></html>

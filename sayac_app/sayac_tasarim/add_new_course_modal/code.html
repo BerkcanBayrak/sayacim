@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add New Course</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+      .neumorphic-inset {
+        background-color: #F0F0F3;
+        box-shadow: inset 5px 5px 10px #d1d9e6, inset -5px -5px 10px #ffffff;
+      }
+      .neumorphic-outset {
+        background-color: #F0F0F3;
+        box-shadow: 5px 5px 10px #d1d9e6, -5px -5px 10px #ffffff;
+      }
+      .neumorphic-outset-primary {
+        background-color: #4ce680;
+        box-shadow: 5px 5px 10px #3db866, -5px -5px 10px #5dff9a;
+      }
+      .neumorphic-outset:active, .neumorphic-outset-primary:active {
+        box-shadow: inset 2px 2px 5px #d1d9e6, inset -2px -2px 5px #ffffff;
+      }
+      .neumorphic-color-selected {
+        box-shadow: inset 3px 3px 6px #d1d9e6, inset -3px -3px 6px #ffffff;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4ce680",
+              "background-light": "#f6f8f6",
+              "background-dark": "#112117",
+            },
+            fontFamily: {
+              "display": ["Lexend", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-gray-200">
+<div class="relative w-full h-screen mx-auto font-display" style="max-width: 420px;">
+<!-- Blurred Background -->
+<div class="absolute inset-0 bg-cover bg-center blur-sm" data-alt="Abstract gradient background with green and light gray colors." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9MXViwF78T-tgouofpdtS0QPn4PM7zt4pKixA5UE3nHncqEeM2BOelm_OS9hcRB8OZ_BNaIwa6Wv9LVZw6PyEi8dE0ar8k4EphCPn4DngV6L6mf-xvngRbacDdnhFXQJ5yxlm_gu-ep5ElIPphy8Kba7z3tpMwjtRcFPXEokEZU_oNZvIFZd-1IRVP-1rxlglUKHFtOcQfUzonDPxiZvufLZCk57G4YHyJHRk72-1nH9u6fVUvhB7oDyH8XbSaUIYcH75A7-YSN8');"></div>
+<div class="absolute inset-0 bg-black/10"></div>
+<!-- Bottom Sheet Modal -->
+<div class="absolute bottom-0 left-0 flex flex-col w-full h-[95%]">
+<div class="flex flex-col flex-1 bg-[#F0F0F3] rounded-t-xl overflow-hidden neumorphic-outset">
+<!-- BottomSheetHandle -->
+<div class="flex items-center justify-center h-5 pt-3">
+<div class="w-9 h-1 rounded-full bg-[#D1D9E6]"></div>
+</div>
+<!-- TopAppBar -->
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="flex items-center justify-start w-12">
+<!-- Placeholder for alignment -->
+</div>
+<h2 class="flex-1 text-lg font-bold leading-tight tracking-[-0.015em] text-center text-[#333333]">Add New Course</h2>
+<div class="flex items-center justify-end w-12">
+<button class="flex items-center justify-center w-10 h-10 overflow-hidden cursor-pointer rounded-xl neumorphic-outset text-[#333333]">
+<span class="text-2xl material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col px-4 pt-4 pb-6 space-y-6">
+<!-- TextField for Course Name -->
+<label class="flex flex-col">
+<p class="text-[#333333] text-base font-medium leading-normal pb-2">Course Name</p>
+<input class="w-full min-w-0 resize-none overflow-hidden rounded-xl text-[#333333] focus:outline-none border-none neumorphic-inset h-14 placeholder:text-[#9e9e9e] p-[15px] text-base font-normal leading-normal" placeholder="e.g. Introduction to Psychology" value=""/>
+</label>
+<!-- TextField for Credit -->
+<label class="flex flex-col">
+<p class="text-[#333333] text-base font-medium leading-normal pb-2">Credit</p>
+<input class="w-full min-w-0 resize-none overflow-hidden rounded-xl text-[#333333] focus:outline-none border-none neumorphic-inset h-14 placeholder:text-[#9e9e9e] p-[15px] text-base font-normal leading-normal" placeholder="e.g. 3" type="number" value=""/>
+</label>
+</div>
+<!-- SectionHeader for Course Color -->
+<h3 class="text-[#333333] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-2">Course Color</h3>
+<!-- Color Picker -->
+<div class="flex items-center justify-between px-4 py-3">
+<button class="w-12 h-12 rounded-full neumorphic-color-selected bg-[#E9B5B5]"></button>
+<button class="w-12 h-12 rounded-full neumorphic-outset bg-[#D4E4A4]"></button>
+<button class="w-12 h-12 rounded-full neumorphic-outset bg-[#A4D4E4]"></button>
+<button class="w-12 h-12 rounded-full neumorphic-outset bg-[#C6A4E4]"></button>
+<button class="w-12 h-12 rounded-full neumorphic-outset bg-[#E4CFA4]"></button>
+</div>
+<!-- Spacer to push button to the bottom -->
+<div class="flex-grow"></div>
+<!-- Save Button -->
+<div class="p-4">
+<button class="w-full h-16 text-lg font-bold text-white rounded-xl neumorphic-outset-primary focus:outline-none">
+                        Save Course
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

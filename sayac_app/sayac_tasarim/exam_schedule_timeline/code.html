@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Exam Schedule</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4ce680", // Using the provided theme, not the user's pastel blue
+                        "background-light": "#F8F9FA", // User's off-white, fits the theme
+                        "background-dark": "#112117",
+                        "text-light": "#495057", // User's dark gray
+                        "text-dark": "#E0E0E0",
+                        // User's pastel colors for cards
+                        "pastel-mint": "#B7E4C7",
+                        "pastel-lavender": "#C7CEEA",
+                        "pastel-peach": "#FFDAB9"
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative mx-auto flex h-auto min-h-screen w-full max-w-[420px] flex-col overflow-x-hidden" style="height: 844px;">
+<!-- Header -->
+<header class="sticky top-0 z-10 flex h-16 shrink-0 items-center justify-between bg-background-light/80 px-4 backdrop-blur-sm dark:bg-background-dark/80">
+<h1 class="text-xl font-bold text-text-light dark:text-text-dark">Exam Schedule</h1>
+<div class="flex items-center space-x-2">
+<button class="flex h-10 w-10 items-center justify-center rounded-full text-text-light dark:text-text-dark">
+<span class="material-symbols-outlined">calendar_today</span>
+</button>
+<button class="flex h-10 w-10 items-center justify-center rounded-full text-text-light dark:text-text-dark">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content with Vertical Timeline -->
+<main class="flex-grow overflow-y-auto px-4 pt-4 pb-24">
+<div class="relative space-y-6">
+<!-- Vertical timeline line -->
+<div class="absolute left-5 top-5 h-full w-0.5 bg-gray-200 dark:bg-gray-700"></div>
+<!-- Exam Card 1 -->
+<div class="relative z-10">
+<div class="flex items-start space-x-4">
+<div class="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-pastel-mint">
+<span class="material-symbols-outlined text-gray-700">science</span>
+</div>
+<div class="w-full overflow-hidden">
+<div class="rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-background-dark">
+<div class="flex items-start justify-between">
+<div>
+<p class="font-bold text-text-light dark:text-text-dark">CHEM 101</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Midterm Exam</p>
+<p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Oct 26, 2024 @ 9:00 AM</p>
+<p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Building A, Room 203</p>
+</div>
+<label class="relative inline-flex cursor-pointer items-center">
+<input checked="" class="peer sr-only" type="checkbox" value=""/>
+<div class="peer h-6 w-11 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none dark:border-gray-600 dark:bg-gray-700"></div>
+</label>
+</div>
+<!-- Countdown Timer -->
+<div class="mt-4 flex gap-2">
+<div class="flex flex-1 flex-col items-stretch gap-2">
+<div class="flex h-12 flex-grow items-center justify-center rounded-lg bg-background-light px-2 dark:bg-gray-800">
+<p class="text-lg font-bold text-text-light dark:text-text-dark">15</p>
+</div>
+<p class="text-center text-xs text-gray-500 dark:text-gray-400">Days</p>
+</div>
+<div class="flex flex-1 flex-col items-stretch gap-2">
+<div class="flex h-12 flex-grow items-center justify-center rounded-lg bg-background-light px-2 dark:bg-gray-800">
+<p class="text-lg font-bold text-text-light dark:text-text-dark">10</p>
+</div>
+<p class="text-center text-xs text-gray-500 dark:text-gray-400">Hours</p>
+</div>
+<div class="flex flex-1 flex-col items-stretch gap-2">
+<div class="flex h-12 flex-grow items-center justify-center rounded-lg bg-background-light px-2 dark:bg-gray-800">
+<p class="text-lg font-bold text-text-light dark:text-text-dark">03</p>
+</div>
+<p class="text-center text-xs text-gray-500 dark:text-gray-400">Mins</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Exam Card 2 -->
+<div class="relative z-10">
+<div class="flex items-start space-x-4">
+<div class="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-pastel-lavender">
+<span class="material-symbols-outlined text-gray-700">history_edu</span>
+</div>
+<div class="w-full overflow-hidden">
+<div class="rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-background-dark">
+<div class="flex items-start justify-between">
+<div>
+<p class="font-bold text-text-light dark:text-text-dark">HIST 204</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Final Exam</p>
+<p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Nov 10, 2024 @ 1:00 PM</p>
+<p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Online Proctored</p>
+</div>
+<label class="relative inline-flex cursor-pointer items-center">
+<input class="peer sr-only" type="checkbox" value=""/>
+<div class="peer h-6 w-11 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none dark:border-gray-600 dark:bg-gray-700"></div>
+</label>
+</div>
+<!-- Countdown Timer -->
+<div class="mt-4 flex gap-2">
+<div class="flex flex-1 flex-col items-stretch gap-2">
+<div class="flex h-12 flex-grow items-center justify-center rounded-lg bg-background-light px-2 dark:bg-gray-800">
+<p class="text-lg font-bold text-text-light dark:text-text-dark">28</p>
+</div>
+<p class="text-center text-xs text-gray-500 dark:text-gray-400">Days</p>
+</div>
+<div class="flex flex-1 flex-col items-stretch gap-2">
+<div class="flex h-12 flex-grow items-center justify-center rounded-lg bg-background-light px-2 dark:bg-gray-800">
+<p class="text-lg font-bold text-text-light dark:text-text-dark">05</p>
+</div>
+<p class="text-center text-xs text-gray-500 dark:text-gray-400">Hours</p>
+</div>
+<div class="flex flex-1 flex-col items-stretch gap-2">
+<div class="flex h-12 flex-grow items-center justify-center rounded-lg bg-background-light px-2 dark:bg-gray-800">
+<p class="text-lg font-bold text-text-light dark:text-text-dark">22</p>
+</div>
+<p class="text-center text-xs text-gray-500 dark:text-gray-400">Mins</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Exam Card 3 -->
+<div class="relative z-10">
+<div class="flex items-start space-x-4">
+<div class="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-pastel-peach">
+<span class="material-symbols-outlined text-gray-700">calculate</span>
+</div>
+<div class="w-full overflow-hidden">
+<div class="rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-background-dark">
+<div class="flex items-start justify-between">
+<div>
+<p class="font-bold text-text-light dark:text-text-dark">MATH 310</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Quiz 2</p>
+<p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Nov 18, 2024 @ 11:30 AM</p>
+<p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Science Hall, Room 112</p>
+</div>
+<label class="relative inline-flex cursor-pointer items-center">
+<input checked="" class="peer sr-only" type="checkbox" value=""/>
+<div class="peer h-6 w-11 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none dark:border-gray-600 dark:bg-gray-700"></div>
+</label>
+</div>
+<!-- Countdown Timer -->
+<div class="mt-4 flex gap-2">
+<div class="flex flex-1 flex-col items-stretch gap-2">
+<div class="flex h-12 flex-grow items-center justify-center rounded-lg bg-background-light px-2 dark:bg-gray-800">
+<p class="text-lg font-bold text-text-light dark:text-text-dark">35</p>
+</div>
+<p class="text-center text-xs text-gray-500 dark:text-gray-400">Days</p>
+</div>
+<div class="flex flex-1 flex-col items-stretch gap-2">
+<div class="flex h-12 flex-grow items-center justify-center rounded-lg bg-background-light px-2 dark:bg-gray-800">
+<p class="text-lg font-bold text-text-light dark:text-text-dark">18</p>
+</div>
+<p class="text-center text-xs text-gray-500 dark:text-gray-400">Hours</p>
+</div>
+<div class="flex flex-1 flex-col items-stretch gap-2">
+<div class="flex h-12 flex-grow items-center justify-center rounded-lg bg-background-light px-2 dark:bg-gray-800">
+<p class="text-lg font-bold text-text-light dark:text-text-dark">59</p>
+</div>
+<p class="text-center text-xs text-gray-500 dark:text-gray-400">Mins</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State Example (commented out) -->
+<!-- 
+                <div class="flex h-96 flex-col items-center justify-center text-center">
+                    <span class="material-symbols-outlined text-6xl text-gray-400 dark:text-gray-500">event_busy</span>
+                    <h3 class="mt-4 text-lg font-medium text-text-light dark:text-text-dark">No Exams Scheduled</h3>
+                    <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Tap the '+' button to add your first exam.</p>
+                </div> 
+                -->
+</div>
+</main>
+<!-- Floating Action Button (FAB) -->
+<div class="absolute bottom-6 right-6 z-20">
+<button class="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-lg">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+</div>
+</body></html>

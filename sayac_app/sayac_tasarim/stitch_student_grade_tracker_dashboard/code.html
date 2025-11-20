@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edit Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7f55f1",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#121212",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-display">
+<div class="relative mx-auto flex h-auto min-h-screen w-full max-w-sm flex-col bg-background-dark overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center p-4">
+<button class="text-white flex size-10 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined text-3xl">arrow_back</span>
+</button>
+<h1 class="text-white text-xl font-bold leading-tight flex-1 text-center pr-10">Edit Profile</h1>
+</div>
+<!-- Main Content -->
+<div class="flex flex-1 flex-col px-4 pt-4 pb-8">
+<!-- Profile Header -->
+<div class="flex w-full flex-col items-center gap-4">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-32 w-32" data-alt="User's profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBGai0J88QDzGZ-xksD3FT0bXkxPL6pHC_34ODe_1o4o4NrZdw2snZi0e4DoP9CtUOalUmUn8_jv_XgWyu5zYwLJ1N6fEJZYKPPc4QNbWxfUXJbvDLOw5-zVE2RX8_vfvAe33vPf_ELylh_ADhgDIPnbTQqzC5h824vcxRs7F4-HCNey1pQt0tAXcU9_eFKsXf66Bxs5cwOWpw3GqQwFXM8RapgiHtqxvQ27fLWm70Rvuoge0vgZERmcvaZlHAZem-AZ-lgHKr-2sg");'></div>
+<button class="absolute bottom-0 right-0 flex h-9 w-9 items-center justify-center rounded-full border-2 border-background-dark bg-primary text-white">
+<span class="material-symbols-outlined text-xl">photo_camera</span>
+</button>
+</div>
+</div>
+<!-- Form Fields -->
+<div class="mt-8 flex flex-col gap-4">
+<label class="flex flex-col flex-1">
+<p class="text-[#E0E0E0] text-sm font-medium leading-normal pb-2">Full Name</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#E0E0E0] focus:outline-0 focus:ring-2 focus:ring-primary border border-[#424242] bg-[#1E1E1E] focus:border-primary h-14 placeholder:text-gray-500 p-[15px] text-base font-normal leading-normal transition-all" value="Alexia Gomez"/>
+</label>
+<label class="flex flex-col flex-1">
+<p class="text-[#E0E0E0] text-sm font-medium leading-normal pb-2">Email</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#E0E0E0] focus:outline-0 focus:ring-2 focus:ring-primary border border-[#424242] bg-[#1E1E1E] focus:border-primary h-14 placeholder:text-gray-500 p-[15px] text-base font-normal leading-normal transition-all" value="alexia.gomez@university.edu"/>
+</label>
+<label class="flex flex-col flex-1">
+<p class="text-[#E0E0E0] text-sm font-medium leading-normal pb-2">Student ID</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#E0E0E0] focus:outline-0 focus:ring-2 focus:ring-primary border border-[#424242] bg-[#1E1E1E] focus:border-primary h-14 placeholder:text-gray-500 p-[15px] text-base font-normal leading-normal transition-all" value="STU-2024-9876"/>
+</label>
+<label class="flex flex-col flex-1">
+<p class="text-[#E0E0E0] text-sm font-medium leading-normal pb-2">Department</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#E0E0E0] focus:outline-0 focus:ring-2 focus:ring-primary border border-[#424242] bg-[#1E1E1E] focus:border-primary h-14 placeholder:text-gray-500 p-[15px] text-base font-normal leading-normal transition-all" value="Computer Science"/>
+</label>
+</div>
+<!-- Spacer to push buttons to bottom -->
+<div class="flex-grow"></div>
+<!-- Action Buttons -->
+<div class="mt-8 flex flex-col gap-4">
+<button class="flex w-full items-center justify-center rounded-xl border border-[#424242] px-6 py-4 text-base font-bold text-white transition-colors hover:bg-white/10">Change Password</button>
+<button class="flex w-full items-center justify-center rounded-xl border border-primary bg-primary px-6 py-4 text-base font-bold text-white transition-opacity hover:opacity-90">Save Changes</button>
+</div>
+</div>
+</div>
+</body></html>
